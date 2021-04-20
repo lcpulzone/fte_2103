@@ -112,9 +112,3 @@ RSpec.describe Event do
     end
   end
 end
-# food_truck1.potential_revenue
-# #=> 148.75
-# food_truck2.potential_revenue
-# #=> 345.00
-# food_truck3.potential_revenue
-# #=> 243.75
