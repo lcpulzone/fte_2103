@@ -20,13 +20,13 @@ class FoodTruck
   end
 
   def potential_revenue
-    total = Hash.new { |hash, key| hash[key] = 0}
+    isolated_prices = Hash.new { |hash, key| hash[key] = 0}
     @inventory.map do |key, value|
-      total[key.price] += value
+      isolated_prices[key.price] += value
     end
-    total_value = total.sum do |key, value|
+    total_revenue = isolated_prices.sum do |key, value|
       key * value
     end
-    total_value
+    total_revenue
   end
 end
