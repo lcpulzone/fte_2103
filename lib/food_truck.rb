@@ -18,4 +18,15 @@ class FoodTruck
   def in_stock?(item)
     @inventory.include?(item)
   end
+
+  def potential_revenue
+    total = Hash.new { |hash, key| hash[key] = 0}
+    @inventory.map do |key, value|
+      total[key.price] += value
+    end
+    total_value = total.sum do |key, value|
+      key * value
+    end
+    total_value
+  end
 end
