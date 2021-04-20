@@ -22,4 +22,14 @@ class Event
       food_truck.in_stock?(item)
     end
   end
+
+  def total_inventory
+    initial_inventory = Hash.new { |hash, key| hash[key] = {} }
+    @food_trucks.map do |food_truck, key|
+      food_truck.each do |key, value|
+        initial_inventory[inventory.item]
+      end
+    end
+    initial_inventory
+  end
 end
